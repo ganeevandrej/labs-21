@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int  M;
+    cin >> M;
+
+    int a[10][10];
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < M; j++) {
+            cin >> a[i][j];
+        }
+    }
+    for (int i1 = 1; i1 < M % 2; i1++)
+    {
+        for (int j = i1; j < M - i1 + 1; j++)
+            cout << a[j, i1];
+        for (int i = i1 + 1; i < M - i1 + 1; i++)
+            cout << a[M - i1 + 1, i];
+        for (int j = M - i1; j > i1; j--)
+            cout << a[j, M - i1 + 1];
+        for (int i = M - i1; i > i1 + 1; i--)
+            cout << a[i1, i];
+    }
+    cout << a[M / 2 + 1, M / 2 + 1];
+    return 0;
+}
