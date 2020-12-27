@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, m, k;
+    double min, p;
+
+    cin >> n;
+    cin >> m;
+   
+    int a[10][10];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> a[i][j];
+        }
+    }
+    min = DBL_MAX;
+    for (int j = 0; j < m; j++) {
+        p = 1;
+        for (int i = 0; i < n; i++) {
+            p *= a[i][j];
+        }
+        if (p < min) {
+            min = p;
+            k = j;
+        }
+    }
+    cout  << ++k << "\n";
+    cout  << min << "\n";
+    
+    return 0;
+}
